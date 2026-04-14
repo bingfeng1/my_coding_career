@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import VueDevTools from 'vite-plugin-vue-devtools'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -25,6 +26,7 @@ export default defineConfig({
     },
     plugins: [
         vue(),
+        VueDevTools(),
         AutoImport({
             resolvers: [ElementPlusResolver()]
         }),

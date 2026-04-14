@@ -2,6 +2,7 @@
 import { onMounted, reactive, readonly, ref, watch } from 'vue';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import { createEchart } from '@/api/echart';
+import { VueMonacoEditor } from '@guolao/vue-monaco-editor';
 // 因为echarts模板中需要使用echarts，这边先提前引入
 import * as $echarts from 'echarts'
 
@@ -65,6 +66,11 @@ const drawEchart = (text: string) => {
 onMounted(() => {
     drawEchart(optionStr)
 })
+
+// monaco editor 变化时
+const handleEditorChange = (value: string) => {
+    _option.optionStr = value
+}
 
 // 如果手动写入的话，那就改为textarea的值
 watch(() => _option.optionStr, (text: string) => {
@@ -174,12 +180,20 @@ const backEchartList = () => {
                 :disabled="isVaild"
             >
                 <div class="editor">
-                    <el-input
-                        class="textarea"
-                        :rows="36"
-                        v-model="_option.optionStr"
-                        type="textarea"
-                        placeholder="Please input"
+                    <VueMonacoEditor
+                        language="javascript"
+                        theme="vs"
+                        :value="_option.optionStr"
+                        @change="handleEditorChange"
+                        :options="{
+                            minimap: { enabled: false },
+                            fontSize: 14,
+                            lineNumbers: 'on',
+                            scrollBeyondLastLine: false,
+                            automaticLayout: true,
+                            tabSize: 2,
+                            wordWrap: 'on'
+                        }"
                     />
                 </div>
             </el-tooltip>
@@ -221,14 +235,9 @@ const backEchartList = () => {
 
     .editor {
         overflow: auto;
-    }
-
-    .textarea {
-        width: 100%;
-        height: 100%;
-        textarea {
-            min-height: 100%;
-        }
+        height: calc(100vh - 160px);
+        border: 1px solid rgb(199, 199, 199);
+        border-radius: 4px;
     }
 
     .show-echart {
