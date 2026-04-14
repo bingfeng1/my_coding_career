@@ -1,0 +1,17 @@
+{
+  "name": "keshihuadaping",
+  "version": "1.0.0",
+  "description": "项目总包 前后端仓库在其内部分别管理，所以git取消监听具体代码 仅保存docker配置",
+  "private": true,
+  "scripts": {
+    "start": "docker compose up -d",
+    "stop": "docker compose down",
+    "dev": "pnpm -r --filter front dev",
+    "dev:back": "pnpm -r --filter back start",
+    "build": "pnpm -r --filter front build",
+    "lint": "pnpm -r --filter front lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

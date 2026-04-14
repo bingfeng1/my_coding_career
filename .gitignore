@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+
+# Docker data
+docker-data/
+
+# Build outputs
+front/dist/
+back/node_modules/
+
+# IDE
+.vscode/
+*.swp
+*.swo
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Misc
+*.tgz

@@ -1,0 +1,22 @@
+use echarts
+db.createUser({
+    user:'root',
+    pwd:'root',
+    roles: [
+        {
+            role: 'readWrite',
+            db: 'visual'
+        }
+    ]
+})
+
+db.createUser({
+    user:'root',
+    pwd:'root',
+    roles: [
+        {
+            role: 'readWrite',
+            db: 'echarts'
+        }
+    ]
+})

@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "types": [
+      "element-plus/global"
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "comps/*": [
+        "./src/components/*"
+      ],
+      "apis/*": [
+        "./src/api/*"
+      ],
+      "pages/*": [
+        "./src/pages/*"
+      ],
+      "utils/*": [
+        "./src/utils/*"
+      ],
+      "routes/*": [
+        "./src/routes/*"
+      ],
+      "styles/*": [
+        "./src/styles/*"
+      ],
+      "stores/*":[
+        "./src/store/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.js",
+    "vuex.d.ts"
+  ]
+}
