@@ -6,3 +6,4 @@ dist-ssr
 yarn-error.log
 auto-imports.d.ts
 components.d.ts
+vite.config.ts.timestamp-*.mjs

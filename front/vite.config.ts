@@ -32,6 +32,13 @@ export default defineConfig({
             resolvers: [ElementPlusResolver()]
         })
     ],
+    css: {
+        preprocessorOptions: {
+            scss: {
+                api: 'modern-compiler'
+            }
+        }
+    },
     server: {
         proxy: {
             '/api': {

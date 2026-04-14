@@ -44,6 +44,8 @@ services:
     image: visual_back:0.0.1
     container_name: visual_back
     restart: always
+    ports:
+      - "3000:3000"
     environment:
       mariadb: mariadb
       mongodb: mongo
